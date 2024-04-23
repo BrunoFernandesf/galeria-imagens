@@ -1,0 +1,42 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.carrossel-seta-anterior {
+    transform: rotate(180deg);
+    width: 10%;
+    height: 100%;
+}
+
+.carrossel-img-seta{
+    width: 30%;
+    height: 30%;
+}
+
+.carrossel-container {
+    width: 90%;
+    height: 100%;
+}
+
+.carrossel-img {
+    width: 100%;
+    height: 100%;
+}
+
+.inativo {
+    display: none;
+}
+
+.carrossel-seta-posterior {
+    width: 10%;
+    height: 100%;
+}
