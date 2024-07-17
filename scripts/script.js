@@ -1,25 +1,41 @@
-/// <reference path="jquery-3.7.1.min.js"/>
+var img = document.querySelector(".img")
+var setaPosterior = document.querySelector(".carrossel-seta-posterior");
+var setaAnterior = document.querySelector(".carrossel-seta-anterior");
 
-$(function(){
-    var imagens = [
-        "./assets/img_01.jpg",
-        "./assets/img_02.jpg",
-        "./assets/img_03.jpg",
-        "./assets/img_04.jpg",
-        "./assets/img_05.jpg",
-        "./assets/img_06.jpg"        
-    ];
+setaPosterior.addEventListener("click", alterarImagemDireita);
+setaAnterior.addEventListener("click", alterarImagemEsquerda)
 
-    var cont = 0;
+var count = 1;
 
-    $(".carrossel-seta-anterior").on("click", function(){
-        cont --;
-        $(".carrossel-img").attr("src", imagens[cont]);
-    })
+function alterarImagemEsquerda(){
+    count--;
 
-    
-    $(".carrossel-seta-posterior").on("click", function(){
-        cont ++;
-        $(".carrossel-img").attr("src", imagens[cont]);
-    })
-})
+    console.log("Função acessada --");
+
+    if(count >= 1 && count <= 6 ){
+        img.src= `assets/img_0${count}.jpg`;
+        
+    }
+    else{
+        count = 6;
+        img.src= `assets/img_0${count}.jpg`;
+    }
+
+}
+
+function alterarImagemDireita(){
+    count++;
+
+    console.log("Função acessada ++");
+
+    if(count <= 6 ){
+        img.src= `assets/img_0${count}.jpg`;
+    }
+    else{
+        count = 1;
+        img.src= `assets/img_0${count}.jpg`;
+    }
+
+}
+
+
